@@ -1,1 +1,1 @@
-web: python natural/views.py/home
+web gunicorn manage:app
