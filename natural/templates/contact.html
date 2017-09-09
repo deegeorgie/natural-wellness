@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<div class="container">
+        <form class="form-horizontal" name="natural" id="natural-form" method="POST" action="/add_contact">
+            <div id="wrapping" class="form-group has-feedback">
+                <section id="aligned">               
+                    <div class="col-md-12">
+                        <label for="yourname">Votre nom: </label><br/>
+                        <input type="text" name="yourname" required placeholder="Votre nom" /><br />
+                    </div><br/>                
+                    <div class="col-md-12">
+                        <label for="youremail">Votre email: </label><br/>
+                        <input type="email" name="youremail" required placeholder="Adresse email" /><br />
+                    </div><br/>
+                    <div class="col-md-12">
+                        <label for="yourphone">Telephone: </label><br/>
+                        <input type="number" name="yourphone" /><br />
+                    </div><br/>
+                    <div class="col-md-12">
+                        <label for="yourmessage">Votre message: </label><br/>
+                        <textarea class="form-control" name="yourmessage" rows="5" required placeholder="Votre probleme en quelques mots"></textarea>
+                    </div><br/>
+                </section>
+                <section id="buttons">
+                    <input type="reset" name="reset" id="resetbtn" class="resetbtn" value="Reinitialiser">
+                    <input type="submit" name="submit" id="submitbtn" class="submitbtn" tabindex="7" value="Envoyer!">
+                    <br style="clear:both;">
+                </section>
+            </div>
+        </form>
+    </div>
+    
+
+    {% endblock %}

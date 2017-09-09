@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Bienvenue au Cabinet Natural Wellness Bobo Dioulasso</title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/font-awesome.min.css"/>
+    <link rel="icon" href="/static/img/logo1_2C1_icon.ico" type="image/x-icon" />
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+   
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="{{ url_for('home') }}" class="navbar-brand">
+                <img src="../static/img/logo1.png" height=30 width=41>
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            Prestations
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Consultation</a></li>
+                            <li><a href="#">Soins infirmiers</a></li>
+                            <li><a href="#">Massages</a></li>
+                            <li><a href="#">Reflexologie</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Specials</li>
+                            <li><a href="#">Refraction subjective</a></li>
+                            <li><a href="#">Aromatherapie</a></li>
+                        </ul>
+                    <li><a href="#">Boutique</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a data-toggle="modal" data-target="#loginModal">
+                            <span class="glyphicon glyphicon-log-in"></span> Connexion
+                        </a>
+                    </li>
+             
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+        <hr />
+            <footer class="container-fluid text-center">
+                <div class="container">
+                    <div class="row">
+                        <div id="googleMap" class="col-sm-4">{{googlemap("My_Office", lat=11.177855, lng=-4.273918, markers=[(11.177855, -4.273918)])}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h5>Notre Addresse</h5>
+                            <address>
+                                BP 4161
+                                <br><span class="glyphicon glyphicon-map-marker"></span> Bobo Dioulasso
+                                <br>Derriere Sonaposte Koko
+                                <br>BURKINA FASO
+                                <br><i class="fa fa-phone"></i>: +226 20955635
+                                <br><i class="fa fa-fax"></i>: +226 20955635
+                                <br> <i class="fa fa-envelope"></i>:
+                                <a href="mailto:gbodiong@yahoo.de">gbodiong@yahoo.de</a>
+                            </address>
+                        </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div style="padding: 40px 10px;">
+                                <div class="nav navbar-nav" style="padding: 40px 10px;">
+                                    <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                                    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id=Natural-Wellness">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                                    <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                                    <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </footer>
+    </div>
+
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    <!-- Add Google Maps -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6ef9YyPKHwSxsk2s_UdA_Czo1Jiu4flg&callback=initMap"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>
