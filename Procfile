@@ -1,1 +1,1 @@
-web: natural/templates/index.html
+web: python natural/templates/index.html
