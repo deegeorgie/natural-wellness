@@ -1,1 +1,1 @@
-web: /natural/templates/index.html
+web: natural/templates/index.html
