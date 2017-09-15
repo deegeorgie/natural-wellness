@@ -67,3 +67,7 @@ def add_contact():
 @app.route('/merci/')
 def merci():
     return render_template('merci.html')
+
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')

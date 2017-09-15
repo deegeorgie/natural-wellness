@@ -2,11 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{ title }} - Bienvenue au Cabinet Natural Wellness Bobo Dioulasso</title>
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <!-- Material Design Bootstrap -->
+    <link href="static/content/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
-    <link rel="stylesheet" type="text/css" href="/static/content/font-awesome.min.css"/>
     <link rel="icon" href="/static/img/logo1_2C1_icon.ico" type="image/x-icon" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
    
@@ -45,7 +49,7 @@
                             <li><a href="#">Refraction subjective</a></li>
                             <li><a href="#">Aromatherapie</a></li>
                         </ul>
-                    <li><a href="#">Boutique</a></li>
+                    <li><a href="{{ url_for('admin') }}">Admin Panel</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -62,52 +66,107 @@
     <div class="container body-content">
         {% block content %}{% endblock %}
         <hr />
-            <footer class="container-fluid text-center">
+        <!--Footer-->
+        <footer class="page-footer center-on-small-only blue-grey lighten-5 pt-0">
+
+            <div style="background-color: #21d192;">
                 <div class="container">
-                    <div class="row">
+                    <!--Grid row-->
+                    <div class="row py-4 d-flex align-items-center">
+
+                        <!--Grid column-->
+                        <div class="col-12 col-md-5 text-left mb-4 mb-md-0">
+                            <h6 class="mb-0 white-text text-center text-md-left"><strong>Retrouvez-nous sur les reseaux sociaux!</strong></h6>
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-12 col-md-7 text-center text-md-right">
+                            <!--Facebook-->
+                            <a class="icons-sm fb-ic ml-0"><i class="fa fa-facebook white-text mr-lg-4"> </i></a>
+
+                            <!--Twitter-->
+                            <a class="icons-sm tw-ic"><i class="fa fa-twitter white-text mr-lg-4"> </i></a>
+
+                            <!--Google +-->
+                            <a class="icons-sm gplus-ic"><i class="fa fa-google-plus white-text mr-lg-4"> </i></a>
+
+                            <!--Linkedin-->
+                            <a class="icons-sm li-ic"><i class="fa fa-linkedin white-text mr-lg-4"> </i></a>
+
+                            <!--Instagram-->
+                            <a class="icons-sm ins-ic"><i class="fa fa-instagram white-text mr-lg-4"> </i></a>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+                </div>
+            </div>
+
+            <!--Footer Links-->
+            <div class="container mt-5 mb-4 text-center text-md-left">
+                <div class="row mt-3">
+
+                    <!--First column-->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mb-r dark-grey-text">
+                        <h6 class="title font-bold"><strong>Cabinet Natural Wellness</strong></h6>
+                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                         <div id="googleMap" class="col-sm-4">{{googlemap("My_Office", lat=11.177855, lng=-4.273918, markers=[(11.177855, -4.273918)])}}</div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <h5>Notre Addresse</h5>
-                            <address>
-                                BP 4161
-                                <br><span class="glyphicon glyphicon-map-marker"></span> Bobo Dioulasso
-                                <br>Derriere Sonaposte Koko
-                                <br>BURKINA FASO
-                                <br><i class="fa fa-phone"></i>: +226 20955635
-                                <br><i class="fa fa-fax"></i>: +226 20955635
-                                <br> <i class="fa fa-envelope"></i>:
-                                <a href="mailto:gbodiong@yahoo.de">gbodiong@yahoo.de</a>
-                            </address>
-                        </div>
-                        </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div style="padding: 40px 10px;">
-                                <div class="nav navbar-nav" style="padding: 40px 10px;">
-                                    <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
-                                    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id=Natural-Wellness">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                    <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
-                                    <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
-                                    <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        
+                    <!--/.First column-->
+                    <!--Second column-->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
+                        <h6 class="title font-bold"><strong>Prestations</strong></h6>
+                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p><a href="#!" class="dark-grey-text">Consultation</a></p>
+                        <p><a href="#!" class="dark-grey-text">Soins Infirmiers</a></p>
+                        <p><a href="#!" class="dark-grey-text">Massages</a></p>
+                        <p><a href="#!" class="dark-grey-text">Reflexologie</a></p>
                     </div>
-                </div>
-            </footer>
-    </div>
+                    <!--/.Second column-->
+                    <!--Third column-->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
+                        <h6 class="title font-bold"><strong>Liens Utiles</strong></h6>
+                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p><a href="#!" class="dark-grey-text">Your Account</a></p>
+                        <p><a href="#!" class="dark-grey-text">Become an Affiliate</a></p>
+                        <p><a href="#!" class="dark-grey-text">Shipping Rates</a></p>
+                        <p><a href="#!" class="dark-grey-text">Help</a></p>
+                    </div>
+                    <!--/.Third column-->
+                    <!--Fourth column-->
+                    <div class="col-md-4 col-lg-3 col-xl-3 dark-grey-text">
+                        <h6 class="title font-bold"><strong>Contact</strong></h6>
+                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p><i class="fa fa-home mr-3"></i> Bobo Dioulasso, BP 4161, BF</p>
+                        <p><i class="fa fa-envelope mr-3"></i> deebodiong@gmail.com</p>
+                        <p><i class="fa fa-phone mr-3"></i> + 226 78010510</p>
+                        <p><i class="fa fa-print mr-3"></i> + 226 78010510</p>
+                    </div>
+                    <!--/.Fourth column-->
 
-    <script src="/static/scripts/jquery-1.10.2.js"></script>
+                </div>
+            </div>
+            <!--/.Footer Links-->
+            <!-- Copyright-->
+            <div class="footer-copyright">
+                <div class="container-fluid">
+                    © 2017 Copyright: <strong> CABINET NATURAL WELLNESS</strong></a>
+                </div>
+            </div>
+            <!--/.Copyright -->
+
+        </footer>
+        <!--/.Footer-->
+    <script type="text/javascript" src="/static/scripts/jquery-1.10.2.js"></script>
     <script src="/static/scripts/bootstrap.js"></script>
     <script src="/static/scripts/respond.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/static/scripts/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/static/scripts/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/static/scripts/mdb.min.js"></script>
     <!-- Add Google Maps -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6ef9YyPKHwSxsk2s_UdA_Czo1Jiu4flg&callback=initMap"></script>
     {% block scripts %}{% endblock %}

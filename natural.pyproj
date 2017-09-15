@@ -45,6 +45,7 @@
     <Content Include="natural\static\content\font-awesome.min.css">
       <Publish>False</Publish>
     </Content>
+    <Content Include="natural\templates\admin.html" />
     <Content Include="natural\templates\merci.html" />
     <Content Include="requirements.txt" />
     <Content Include="natural\static\content\bootstrap.css" />
