@@ -1,1 +1,1 @@
-web: gunicorn natural:natural
+web: gunicorn web:natural
